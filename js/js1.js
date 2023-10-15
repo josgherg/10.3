@@ -4,6 +4,8 @@ const principal= document.getElementById('contenedorPrincipal');
 let seleccion = document.getElementById("boton-todos");
 const busqueda = document.getElementById('boton-buscar');
 let campo = document.getElementById('campoBusqueda');
+let titulo = document.getElementById('tituloPrincipal');
+
 
 const clasePok = fetch("https://pokeapi.co/api/v2/type");
 clasePok
@@ -31,6 +33,7 @@ const Pok = fetch("https://pokeapi.co/api/v2/pokemon-form/");
     })
     .then((datos)=>{
         principal.classList.add('contenedorPrincipal');
+        titulo.textContent = 'POKEMONES';
         datos.results.map((dato)=>{ 
             let link = dato.url;
             const otrosDatosPok = fetch(link);
@@ -72,6 +75,7 @@ seleccion.addEventListener("change", ()=>{
             principal.classList.remove('sinhallazgos');
             principal.classList.add('contenedorPrincipal')
         }
+        titulo.textContent = 'POKEMONES';
         Pokemon
             .then((respuesta)=>{
                 return respuesta.json();
@@ -113,6 +117,7 @@ seleccion.addEventListener("change", ()=>{
             principal.classList.remove('sinhallazgos');
             principal.classList.add('contenedorPrincipal')
         }
+        titulo.textContent = 'RESULTADOS DE LA BUSQUEDA';
         Pokemon
             .then((respuesta)=>{
                 return respuesta.json();
@@ -179,6 +184,7 @@ busqueda.addEventListener('click',(e)=>{
             principal.classList.remove('sinhallazgos');
             principal.classList.add('contenedorPrincipal');
         }
+        titulo.textContent = 'RESULTADOS DE LA BUSQUEDA';
         busquedaPokemon
             .then((respuesta)=>{
                 return respuesta.json();

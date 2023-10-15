@@ -183,6 +183,8 @@ nav{
     align-items: center; 
     font-size: 30px;
     font-weight: bold;   
+    background-color: yellow;
+    color: rgb(98, 97, 97);
 }
 
 .div1{
@@ -259,7 +261,7 @@ nav{
 }
 
 #tituloPrincipal{
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bolder;
     padding: 30px;
     text-align: center;
